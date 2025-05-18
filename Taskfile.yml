@@ -1,0 +1,48 @@
+version: '3'
+
+tasks:
+  default:
+    aliases:
+      - list
+    desc: List all tasks in the Taskfile
+    cmds:
+      - task --list
+
+  format:
+    desc: Format code
+    cmds:
+      - uv run ruff format src/
+
+  check:
+    desc: Run checkers
+    deps:
+      - check:ruff
+      - check:mypy
+
+  check:ruff:
+    desc: Run ruff
+    cmds:
+      - uv run ruff check src/
+
+  check:mypy:
+    desc: Run mypy
+    cmds:
+      - uv run mypy src/
+
+  fix:
+    desc: Fix code style issues
+    cmds:
+      - uv run ruff check --fix src/
+
+  commit:prepare:src:
+    desc: Prepare commits
+    deps:
+      - check
+      - fix
+
+  commit:
+    desc: Commit changes
+    cmds:
+      - sh .scripts/prepare-commit/src.sh
+      - sh .scripts/prepare-commit/ipynb.sh
+      - uv run cz commit
