@@ -1,7 +1,7 @@
 [project]
 name = "horseshoe-gibbs-torch"
 version = "0.1.0"
-description = "Add your description here"
+description = "PyTorch implementation of Gibbs sampler for Bayesian linear regression with horseshoe prior."
 readme = "README.md"
 authors = [
     { name = "mory22k", email = "mory22k@dc.tohoku.ac.jp" }

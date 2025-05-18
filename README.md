@@ -1,6 +1,6 @@
 # horseshoe-gibbs-torch
 
-A PyTorch implementation of Gibbs samplers for Bayesian linear regression with horseshoe prior.
+PyTorch implementation of Gibbs sampler for Bayesian linear regression with horseshoe prior.
 
 [![Python Version](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/release/python-3130/)
 [![PyTorch Version](https://img.shields.io/badge/torch-2.7.0%2B-orange)](https://pytorch.org/)
