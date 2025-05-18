@@ -21,13 +21,6 @@ class FastMultivariateGaussianMixtureBCM:
         p(theta | X, y, D, sigma) = N(A^{-1} X^T y, sigma^2 A^{-1}),
         A = X^T X + diag(D)^{-1}.
 
-    Args:
-        X (torch.Tensor): Design matrix of shape (n, p).
-        y (torch.Tensor): Target vector of shape (n,).
-        D_diag (torch.Tensor): Diagonal of prior precision matrix D, shape (p,).
-        sigma (torch.Tensor): Noise standard deviation (scalar).
-        show_warn (bool): Whether to log a warning if linear solve fails.
-
     References:
         [1] A. Bhattacharya, A. Chakraborty, and B. K. Mallick, Fast sampling with Gaussian scale-mixture priors in high-dimensional regression, Biometrika 103, 985 (2016).
     """
@@ -149,12 +142,6 @@ class FastMultivariateGaussianMixtureRue:
     where
         p(theta | X, y, D, sigma) = N(A^{-1} X^T y, sigma^2 A^{-1}),
         A = X^T X + diag(D)^{-1}.
-
-    Args:
-        XtX (torch.Tensor): X^T X matrix of shape (p, p).
-        Xty (torch.Tensor): X^T y vector of shape (p,).
-        D_diag (torch.Tensor): Diagonal of prior precision matrix D, shape (p,).
-        sigma2 (torch.Tensor): Noise variance (scalar).
 
     References:
         [1] H. Rue, Fast sampling of Gaussian Markov random fields, J. R. Stat. Soc. Series B Stat. Methodol. 63, 325 (2001).
