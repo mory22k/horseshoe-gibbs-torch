@@ -43,6 +43,5 @@ tasks:
   commit:
     desc: Commit changes
     cmds:
-      - sh .scripts/prepare-commit/src.sh
-      - sh .scripts/prepare-commit/ipynb.sh
+      - .scripts/prepare-commit/src.sh
       - uv run cz commit
