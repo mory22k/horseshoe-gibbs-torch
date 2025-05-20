@@ -285,8 +285,7 @@ class HorseshoeGibbsSampler(BaseSampler):
                 b_sigma2,
             )
             if is_failed and not continue_after_failure:
-                logger.error("Sampling failed. Stopping the sampling process.")
-                break
+                raise RuntimeError("Sampling failed..")
 
         if update_parameters:
             self.params["weight"] = weight
